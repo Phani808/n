@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-              kubernetesDeploy configs: '', enableConfigSubstitution: false, kubeConfig: [path: 'deployment.yml'], kubeconfigId: 'kubeconfig', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
+          kubernetesDeploy configs: 'deployment.yml', kubeconfigId: 'kubeconfig')
                sh 'kubectl get pods'
             }
         }
