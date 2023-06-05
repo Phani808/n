@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-        kubernetesDeploy (configs: 'deployment.yml','service.yml',kubeconfigId: 'kubeconfig')
+      kubernetesDeploy configs: ['deployment.yml', 'service.yml'], kubeconfigId: 'kubeconfig'
+
             }
         }
     }
