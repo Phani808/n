@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-          kubernetesDeploy (configs: 'deployment.yml', kubeconfigId: 'kubeconfig')
-               sh 'kubectl get pods'
+        kubernetesDeploy (configs: 'deployment.yml',kubeconfigId: 'kubeconfig')
             }
         }
     }
