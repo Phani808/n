@@ -8,11 +8,11 @@ pipeline {
                     kubeconfigId: 'kubeconfig'
             }
         }
-    }
-    stage('Deploy') {
-      steps {      
-       
-        sh 'ansible-playbook -i hosts playbook.yml'
-      }
+
+        stage('Deploy') {
+            steps {
+                sh 'ansible-playbook -i hosts playbook.yml'
+            }
+        }
     }
 }
