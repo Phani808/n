@@ -9,10 +9,15 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            steps {
-                sh 'ansible-playbook -i hosts playbook.yml'
-            }
-        }
+        stage('Run Ansible Playbook') {
+  steps {
+    ansiblePlaybook becomeUser: 'jenkins',
+                   colorized: true,
+                   credentialsId: 'jenkins-slave',
+                   installation: 'Ansible',
+                   inventory: '/etc/ansible/hosts',
+                   playbook: '/home/mpvarma997/playbook.yml'
+  }
+}
     }
 }
