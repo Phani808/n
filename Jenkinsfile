@@ -16,7 +16,7 @@ pipeline {
                    credentialsId: 'jenkins-slave',
                    installation: 'Ansible',
                    inventory: './hosts',
-                   playbook: '/home/mpvarma997/playbook.yml'
+                   playbook: './playbook.yml'
   }
 }
     }
